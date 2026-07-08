@@ -185,6 +185,30 @@ p {
   background-color: rgb(65, 18, 106);
 }
 
+.customer__title {
+  margin-top: 68px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
+
+}
+
+.customer__logos {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.customer__logos img {
+  width: auto;
+  height: 20px;
+  max-width: 100px;
+  margin-top: 12px
+}
+
+.fast__img {
+  min-height: 10px;
+}
 
 #features .row__features__row {
   display: flex;
