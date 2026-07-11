@@ -10,7 +10,7 @@
 a {
   cursor: pointer;
   text-decoration: none;
-  tex-anchor: none;
+  text-anchor: none;
 }
 
 /*
@@ -102,9 +102,67 @@ li {
   background-color: #4f11cd
 }
 
+.btn__menu {
+  background-color: transparent;
+  font-size: 40px;
+  text-align: center;
+  border: none;
+  display: none;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu--open .menu__backdrop {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  font-size: 40px;
+  color: black;
+}
+
+.btn__menu--close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 8px;
+  color: black;
+}
+
 /*
 
-HEADER
+LANDING
 
 */
 
@@ -130,6 +188,7 @@ header {
   margin: 0 auto;
   gap: 48px;
   max-width: 1280px;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -279,6 +338,7 @@ FEATURES
   color: rgb(36, 62, 99);
   letter-spacing: 0.025em;
   margin: 16px 0;
+  text-align: center;
 }
 
 .section__para {
@@ -396,6 +456,8 @@ QUALITY
   border: 1px solid rgb(226, 232, 240);
   margin-top: 75px;
   margin-left: 50px;
+  width: 100%;
+  height: 100%;
 }
 
 .quality .row {
@@ -492,6 +554,7 @@ PRICING
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .plan {
@@ -662,6 +725,8 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .footer__column {
@@ -698,6 +763,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer__logo--img {
@@ -738,3 +810,58 @@ footer {
   opacity: 0.5;
 }
 
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES*/
+
+
+@media (max-width: 1024px) {
+  .nav__links {
+    display: none;
+  }
+
+  .btn__menu {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__description {
+    padding: 0 24px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  .feature {
+    width: 50%;
+  }
+
+  
+}
+
+/*SMALL PHONES, LARGE SMARTPHONES */
+@MEDIA (max-width: 550px) {
+  .btn__menu {
+    display: block;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .plans {
+    margin-left: 126px;
+  }
+
+  .steps__description {
+    margin-left: 126px;
+  }
+}
