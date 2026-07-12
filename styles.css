@@ -34,9 +34,9 @@ nav {
 }
 
 .logo {
-  width: 200px;
-  align-items: center;
-  display: flex;
+  width: auto;
+  height: 40px;
+  display: block;
 }
 
 .logo__text {
@@ -47,7 +47,6 @@ nav {
 }
 
 .logo img {
-  height: 60px;
   margin-right: 10px;
 }
 
@@ -331,7 +330,7 @@ FEATURES
 .row__features__row {
   width: 100%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1024px;
 }
 
 .section__tag {
@@ -420,6 +419,7 @@ FEATURES
   color: rgb(144, 159, 180);
   line-height: 2;
   font-weight: 500;
+  max-width: calc(634px / 3);
 }
 
 /*
@@ -831,7 +831,15 @@ footer {
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES*/
 
+@media (max-width: 1280px) {
+  .header__img {
+    max-width: 512px;
+  }
 
+  header.row {
+    align-items: flex-end;
+  }
+}
 @media (max-width: 1024px) {
   .nav__links {
     display: none;
@@ -839,6 +847,38 @@ footer {
 
   .btn__menu {
     display: block;
+  }
+
+  .header__description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+
+  header .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features {
+    max-width: 768px;
+  }
+
+  .feature__row {
+    padding: 32px 8px;
+    margin: 0 16px;
+  }
+
+  .feature__para {
+    max-width: none;
+  }
+
+  footer {
+    padding: 80px 32px;
   }
 }
 
@@ -876,7 +916,32 @@ footer {
     min-width: 0;
     margin: 0 auto;
   }
+
+  .features {
+    justify-content: center;
+  }
+
+   .footer__columns {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer__column {
+    width: calc(100% / 3);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__copyright,
+  .footer__socials {
+    margin-top: 32px;
+  }
 }
+
 
 @media (max-width: 550px) {
   .header__email {
@@ -901,5 +966,25 @@ footer {
 
   .feature {
     width: 100%;
+  }
+
+  footer {
+    padding: 80px 24px;
+    overflow: hidden;
+  }
+
+  .footer__columns {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer__column {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__divider {
+    margin: 48px 0;
   }
 }
