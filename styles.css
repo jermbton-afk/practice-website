@@ -13,6 +13,12 @@ a {
   text-anchor: none;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /*
 
 NAVIGATION
@@ -108,6 +114,8 @@ li {
   text-align: center;
   border: none;
   display: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .menu__backdrop {
@@ -117,6 +125,8 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: 70%;
   z-index: 100;
   display: flex; 
   justify-content: center;
@@ -124,6 +134,7 @@ li {
   transition: all 300ms ease;
   opacity: 0;
   visibility: hidden;
+  border-bottom: 1px solid rgb(161, 158, 158);
 }
 
 .menu--open .menu__backdrop {
@@ -224,7 +235,8 @@ p {
 
 .header__email {
   width: 100%;
-  min-width: 400px;
+  min-width: 0;
+  max-width: 448px;
   height: 68px;
   position: relative;
   display: flex;
@@ -248,26 +260,26 @@ p {
 }
 
 .header__email--input:hover {
-    border-color: rgba(160, 174, 192);
+  border-color: rgba(160, 174, 192);
 }
 
 .header__email--input:focus, .header__email--input:active {
-    outline: none;
-    border-color: rgba(100, 21, 255);
+  outline: none;
+  border-color: rgba(100, 21, 255);
 }
 
 .header__email--btn {
-    z-index: 2;
-    margin: 8px;
-    height: calc(100% - 16px);
-    border-radius: 500px;
-    width: 160px;
-    border: none;
-    background-color: #6415ff;
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    transition: all 300ms ease;
+  z-index: 2;
+  margin: 8px;
+  height: calc(100% - 16px);
+  border-radius: 500px;
+  width: 160px;
+  border: none;
+  background-color: #6415ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 300ms ease;
 }
 
 .header__email--btn:hover {
@@ -345,7 +357,9 @@ FEATURES
   font-size: 18px;
   font-weight: 500;
   line-height: 1.625;
-  min-width: 525px;
+  min-width: 0;
+  max-width: 576px;
+  width: 100%;
 }
 
 .feature__row {
@@ -415,8 +429,14 @@ QUALITY
 */
 
 .quality__description,
-.quality__img--wrapper {
+.quality__img--wrapper,
+.steps__description,
+.steps__img--wrapper {
   width: 50%;
+}
+
+.steps__img--wrapper {
+  margin-top: 0;
 }
 
 .quality__description {
@@ -823,54 +843,63 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .header__description {
-    padding: 0 24px;
+  .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  h1 {
-    font-size: 40px;
+  .header__description,
+  .header__img__wrapper,
+  .quality__description,
+  .quality__img--wrapper,
+  .steps__description,
+  .steps__img--wrapper {
+    width: 100%;
+    max-width: 512px;
   }
 
-  h2 {
-    font-size: 26px;
+  .quality__img--wrapper,
+  .steps__img--wrapper {
+    margin: 48px auto 0;
   }
 
-  button {
-    font-size: 18px;
+  .quality__description,
+  .steps__description {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .section__para {
+    width: 100%;
+    max-width: 576px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .header__email {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header__email--input {
+    position: static;
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  .header__email--btn {
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 16px 24px;
   }
 
   .feature {
-    width: 50%;
-  }
-
-  
-}
-
-/*SMALL PHONES, LARGE SMARTPHONES */
-@MEDIA (max-width: 550px) {
-  .btn__menu {
-    display: block;
-  }
-
-  .nav__links {
-    display: none;
-  }
-
-  .row {
-    flex-wrap: wrap;
     width: 100%;
   }
-
-  .plans,
-  .steps__description {
-    margin-left: 0;
-    display: flex;
-    align-items: center;
-    max-width: 430px;
-  }
-
-  .footer {
-    min-width: 430px;
-  }
-
 }
