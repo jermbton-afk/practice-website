@@ -33,10 +33,11 @@ nav {
   height: 80px;
 }
 
-.logo {
-  width: auto;
-  height: 40px;
-  display: block;
+.nav__logo {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding-bottom: 4px;
 }
 
 .logo__text {
@@ -46,7 +47,7 @@ nav {
   letter-spacing: 0.6px;
 }
 
-.logo img {
+.nav__logo img {
   margin-right: 10px;
   width: auto;
   height: 40px;
